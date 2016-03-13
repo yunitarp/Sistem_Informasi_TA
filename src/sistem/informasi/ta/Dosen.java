@@ -15,7 +15,7 @@ public class Dosen {
     String nip;
     
     public Dosen(String nama, String nip, String status){
-        super(nama);
+//        super(nama);
         this.nip = nip;
         this.status = status;
     }
