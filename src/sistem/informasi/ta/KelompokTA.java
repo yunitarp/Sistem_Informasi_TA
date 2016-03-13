@@ -10,42 +10,62 @@ package sistem.informasi.ta;
  * @author yunitarp2706
  */
 public class KelompokTA {
-//    private String topik;
-//    private Mahasiswa[] anggota;
-//    private int nAnggota;
-//    private int maxAnggota;
-//
-//    public KelompokTA(String topik, Mahasiswa[] anggota, int maxAnggota) {
-//        this.topik = topik;
-//        this.anggota = anggota;
-//        this.nAnggota = 0;
-//        this.maxAnggota = maxAnggota;
-//    }
-//    
-//    
-//    public void setTopik(String topik){
-//        this.topik = topik;
-//    }
-//    public String getTopik(){
-//        return topik;
-//    }
-//    public void addAnggota(Mahasiswa m){
-//        if(nAnggota<maxAnggota){
-//            anggota[nAnggota]=m;
-//            nAnggota++;
-//        }
-//        else{
-//            System.out.println("Anggota sudah penuh");
-//        }
-//    
-//    public int getNAnggota(){
-//        return nAnggota;
-//    }
-//    public Mahasiswa getAnggotaByIndex(int i){
-//        return anggota[i];
-//    }
-//    public Mahasiswa getAnggotaByNim(String nim){
-//        
-//    }
+        private String topik;
+        private Mahasiswa[] anggota;
+        private int nAnggota;
+        private int maxAnggota;
+        
+        public KelompokTA(String topik, Mahasiswa[] anggota, int maxAnggota) {
+           this.topik = topik;
+           this.anggota = anggota;
+            this.nAnggota = 0;
+            this.maxAnggota = maxAnggota;
+    }
     
+    
+    public void setTopik(String topik){
+        this.topik = topik;
+    }
+    public String getTopik(){
+        return topik;
+    }
+    public void addAnggota(Mahasiswa m){
+        if(nAnggota<maxAnggota){
+            anggota[nAnggota]=m;
+            nAnggota++;
+        }
+        else{
+            System.out.println("Anggota sudah penuh");
+        }
+    }
+    
+    public int getNAnggota(){
+        return nAnggota;
+    }
+    public Mahasiswa getAnggotaByIndex(int i){
+        return anggota[i];
+    }
+    public Mahasiswa getAnggotaByNim(String nim){
+    for(int i=0; i<nAnggota; i++){
+        if(anggota[i].nim==nim){
+            return anggota[i];
+        }
+    }
+        return null;
+    }
+    
+    public boolean removeAnggota(String nim){
+        for(int i=0; i<nAnggota; i++){
+            if(anggota[i].nim==nim){
+                for(int j=i+1; j<nAnggota; j++){
+                    anggota[j-1]=anggota[j];
+                }
+                nAnggota--;
+                return true;
+            }
+            }
+        return false;
+        }
+        
 }
+
