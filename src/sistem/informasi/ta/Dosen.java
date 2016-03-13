@@ -13,13 +13,15 @@ public class Dosen {
     private KelompokTA topikTA[];
     private String status;
     private String nip;
+    private String kodeDosen;
     private int nTopikTA;
     private int maxTopikTA;
     
-    public Dosen(String nama, String status, String nip, int maxTopikTA ){
+    public Dosen(String nama, String status, String nip, String kodeDosen, int maxTopikTA ){
         super(nama);
         this.nip = nip;
         this.status = status;
+        this.kodeDosen = kodeDosen;
         this.nTopikTA = 0;
         this.maxTopikTA = maxTopikTA;
         this.topikTA = new KelompokTA[maxTopikTA];
@@ -75,4 +77,13 @@ public class Dosen {
             }
         return false;
     }
+
+    public String getKodeDosen() {
+        return kodeDosen;
+    }
+
+    public void setKodeDosen(String kodeDosen) {
+        this.kodeDosen = kodeDosen;
+    }
+    
 }
