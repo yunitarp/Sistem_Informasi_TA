@@ -11,6 +11,20 @@ package sistem.informasi.ta;
  */
 public class TugasAkhir {
     private Dosen[] pembimbing = new Dosen[2];
+    private String judul;
+
+    public TugasAkhir(String judul) {
+        this.judul = judul;
+        this.pembimbing = new Dosen[2];
+    }
+
+    public String getJudul() {
+        return judul;
+    }
+
+    public void setJudul(String judul) {
+        this.judul = judul;
+    }
     
     public boolean setPembimbing(Dosen d, int i){
         if(i == 0 || i == 1){

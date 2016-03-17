@@ -24,6 +24,10 @@ public class Orang {
                 this.tanggalLahir = tanggalLahir;
         }
 
+        public Orang(String nama) {
+        this.nama = nama;
+        }
+
         public void setNama (String nama){
 		this.nama = nama;
 	}

@@ -9,13 +9,16 @@ package sistem.informasi.ta;
  *
  * @author Bety Elysabeth
  */
-public abstract class KelompokTA {
+public class KelompokTA {
 	private String topik;
 	private Mahasiswa[] anggota;
+        private int nAnggota;
+        private int maxAnggota; 
 	
 	public KelompokTA(String topik) {
 		this.topik = topik;
-		Mahasiswa[] anggota = new Mahasiswa[4];
+		this.anggota = new Mahasiswa[4];
+                this.nAnggota = 0;
 	}
 		
 	public void setTopikTA(String topik) {
@@ -26,16 +29,44 @@ public abstract class KelompokTA {
 		return topik;
 	}
 	
-	public void addAnggota(Mahasiswa m) {
-		Mahasiswa[] m = new Mahasiswa;
-		
-		if (anggota < 4){
-			Mahasiswa[anggota] = m;
-			m++;
-		}
-                else {
-		System.out.println("Anggota Kelompok TA Penuh.");
-		}
-	}
+	public void addAnggota(Mahasiswa m){
+        if(nAnggota<maxAnggota){
+            anggota[nAnggota]=m;
+            nAnggota++;
+        }
+        else{
+            System.out.println("Anggota sudah penuh");
+            }
+        }
+        
+        public int getNAnggota(){
+        return nAnggota;
+        }
+        
+        public Mahasiswa getAnggotaByIndex(int i){
+            return anggota[i];
+        }
+        
+        public Mahasiswa getAnggotaByNim(String nim){
+        for(int i=0; i<nAnggota; i++){
+            if(anggota[i].getNim() == nim){
+                return anggota[i];
+            }
+        }
+            return null;
+        }
+        
+        public boolean removeAnggota(String nim){
+        for(int i=0; i<nAnggota; i++){
+            if(anggota[i].getNim() == nim){
+                for(int j=i+1; j<nAnggota; j++){
+                    anggota[j-1]=anggota[j];
+                }
+                nAnggota--;
+                return true;
+            }
+            }
+        return false;
+        }
 }
 
