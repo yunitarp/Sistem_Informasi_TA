@@ -9,7 +9,7 @@ package sistem.informasi.ta;
  *
  * @author yunitarp2706
  */
-public class Dosen {
+public class Dosen extends Orang {
     private KelompokTA topikTA[];
     private String status;
     private String nip;
@@ -45,7 +45,7 @@ public class Dosen {
     
     public boolean createKelompokTA(String topik){
         if(nTopikTA<maxTopikTA){
-         this.topikTA[nTopikTA]= new KelompokTA(topik,5);
+         this.topikTA[nTopikTA]= new KelompokTA(topik);
          nTopikTA++;
          return true;   
         }
@@ -58,7 +58,7 @@ public class Dosen {
     }
     public KelompokTA getKelompokByTopik(String topik){
         for(int i=0; i<nTopikTA; i++){
-            if(topikTA[i].getTopik() == topik){
+            if(topikTA[i].getTopikTA() == topik){
                 return topikTA[i];
             }
         }
@@ -67,7 +67,7 @@ public class Dosen {
     
     public boolean deleteKelompok(String topik){
         for(int i=0; i<nTopikTA; i++){
-            if(topikTA[i].getTopik() == topik){
+            if(topikTA[i].getTopikTA() == topik){
                 for(int j=i+1; j<nTopikTA; j++){
                     topikTA[j-1]=topikTA[j];
                 }
