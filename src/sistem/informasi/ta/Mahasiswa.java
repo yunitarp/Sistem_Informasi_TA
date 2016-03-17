@@ -9,7 +9,7 @@ package sistem.informasi.ta;
  *
  * @author Aldry
  */
-public class Mahasiswa extends Orang implements Bimbingan {
+public class Mahasiswa extends Orang /*implements Bimbingan*/{
     private TugasAkhir tugasAkhir;
     private String nim;
     private String status;
@@ -20,14 +20,14 @@ public class Mahasiswa extends Orang implements Bimbingan {
      * @param status
      * @param nama
      */
-    public Mahasiswa(String nim,String status,String nama){
-       this.nim = nim;
+    public Mahasiswa(String nama, String nim,String status){
        super(nama);
+       this.nim = nim;
        this.status = status;
     }
     
     public void createTA (String judul) {
-        tugasAkhir = new TugasAkhir(judul);
+        this.tugasAkhir = new TugasAkhir(judul);
     }
 
     public String getNim() {
@@ -47,8 +47,8 @@ public class Mahasiswa extends Orang implements Bimbingan {
     }
     
     public void displayInfoMahasiswa() {
-        System.out.println("Nama Mahasiswa : " + nama);
-        System.out.println("Nama Mahasiswa : " + nim);
-        System.out.println("Nama Mahasiswa : " + status);
+        System.out.println("Nama Mahasiswa : " + getNama());
+        System.out.println("Nama Mahasiswa : " + getNim());
+        System.out.println("Nama Mahasiswa : " + getStatus());
     }
 }
