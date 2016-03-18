@@ -13,11 +13,11 @@ public class KelompokTA {
 	private String topik;
 	private Mahasiswa[] anggota;
         private int nAnggota;
-        private int maxAnggota; 
+        private int maxAnggota=4; 
 	
 	public KelompokTA(String topik) {
 		this.topik = topik;
-		this.anggota = new Mahasiswa[4];
+		this.anggota = new Mahasiswa[maxAnggota];
                 this.nAnggota = 0;
 	}
 		
@@ -49,7 +49,7 @@ public class KelompokTA {
         
         public Mahasiswa getAnggotaByNim(String nim){
         for(int i=0; i<nAnggota; i++){
-            if(anggota[i].getNim() == nim){
+            if(anggota[i].getNim().equals(nim)){
                 return anggota[i];
             }
         }
@@ -58,7 +58,7 @@ public class KelompokTA {
         
         public boolean removeAnggota(String nim){
         for(int i=0; i<nAnggota; i++){
-            if(anggota[i].getNim() == nim){
+            if(anggota[i].getNim().toLowerCase().equals(nim.toLowerCase())){
                 for(int j=i+1; j<nAnggota; j++){
                     anggota[j-1]=anggota[j];
                 }

@@ -67,14 +67,15 @@ public class Dosen extends Orang {
     
     public boolean deleteKelompok(String topik){
         for(int i=0; i<nTopikTA; i++){
-            if(topikTA[i].getTopikTA().equals(topik)){
+            if(topikTA[i].getTopikTA().toLowerCase().equals(topik.toLowerCase())){
+                topikTA[i]=null;
                 for(int j=i+1; j<nTopikTA; j++){
                     topikTA[j-1]=topikTA[j];
                 }
                 nTopikTA--;
                 return true;
             }
-            }
+        }
         return false;
     }
 

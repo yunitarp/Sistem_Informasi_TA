@@ -9,7 +9,7 @@ package sistem.informasi.ta;
  *
  * @author Bety Elysabeth
  */
-public class Orang {
+public abstract class Orang {
     private String nama;
 	private int umur;
 	private String noTelp;
