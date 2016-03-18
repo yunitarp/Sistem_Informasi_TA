@@ -58,7 +58,7 @@ public class Dosen extends Orang {
     }
     public KelompokTA getKelompokByTopik(String topik){
         for(int i=0; i<nTopikTA; i++){
-            if(topikTA[i].getTopikTA() == topik){
+            if(topikTA[i].getTopikTA().equals(topik)){
                 return topikTA[i];
             }
         }
@@ -67,7 +67,7 @@ public class Dosen extends Orang {
     
     public boolean deleteKelompok(String topik){
         for(int i=0; i<nTopikTA; i++){
-            if(topikTA[i].getTopikTA() == topik){
+            if(topikTA[i].getTopikTA().equals(topik)){
                 for(int j=i+1; j<nTopikTA; j++){
                     topikTA[j-1]=topikTA[j];
                 }

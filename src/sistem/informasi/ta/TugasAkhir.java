@@ -39,7 +39,7 @@ public class TugasAkhir {
     }
     public Dosen getPembimbingByKodeDosen(String kodeDosen){
         for(int i=0; i<2; i++){
-            if(pembimbing[i].getKodeDosen() == kodeDosen){
+            if(pembimbing[i].getKodeDosen().equals(kodeDosen)){
                 return pembimbing[i];
             }
                 
