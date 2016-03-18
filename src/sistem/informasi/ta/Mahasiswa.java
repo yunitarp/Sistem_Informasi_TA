@@ -13,9 +13,6 @@ public class Mahasiswa extends Orang /*implements Bimbingan*/{
     private TugasAkhir tugasAkhir;
     private String nim;
     private String status;
-    public void test(){
-        
-    }
     /**
      *
      * @param nim
