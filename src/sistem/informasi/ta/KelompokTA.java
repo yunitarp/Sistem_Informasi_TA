@@ -5,20 +5,18 @@
  */
 package sistem.informasi.ta;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Bety Elysabeth
  */
 public class KelompokTA {
 	private String topik;
-	private Mahasiswa[] anggota;
-        private int nAnggota;
-        private int maxAnggota=4; 
+        private ArrayList<Mahasiswa> anggota = new ArrayList<>();
 	
 	public KelompokTA(String topik) {
 		this.topik = topik;
-		this.anggota = new Mahasiswa[maxAnggota];
-                this.nAnggota = 0;
 	}
 		
 	public void setTopikTA(String topik) {
@@ -30,43 +28,33 @@ public class KelompokTA {
 	}
 	
 	public void addAnggota(Mahasiswa m){
-        if(nAnggota<maxAnggota){
-            anggota[nAnggota]=m;
-            nAnggota++;
-        }
-        else{
-            System.out.println("Anggota sudah penuh");
-            }
+            if(anggota.size()>4) return;
+            anggota.add(m);
         }
         
-        public int getNAnggota(){
-        return nAnggota;
-        }
         
         public Mahasiswa getAnggotaByIndex(int i){
-            return anggota[i];
+            if(i<anggota.size()) return anggota.get(i);
+            return null;
         }
         
         public Mahasiswa getAnggotaByNim(String nim){
-        for(int i=0; i<nAnggota; i++){
-            if(anggota[i].getNim().equals(nim)){
-                return anggota[i];
+        for(int i=0; i<anggota.size(); i++){
+            if(anggota.get(i).getNim().equals(nim)){
+                return anggota.get(i);
             }
         }
             return null;
         }
         
         public boolean removeAnggota(String nim){
-        for(int i=0; i<nAnggota; i++){
-            if(anggota[i].getNim().toLowerCase().equals(nim.toLowerCase())){
-                for(int j=i+1; j<nAnggota; j++){
-                    anggota[j-1]=anggota[j];
+            for(int i=0; i<anggota.size(); i++){
+                if(anggota.get(i).getNim().toLowerCase().equals(nim.toLowerCase())){
+                    anggota.remove(i);
+                    return true;
                 }
-                nAnggota--;
-                return true;
             }
-            }
-        return false;
+            return false;
         }
 }
 
