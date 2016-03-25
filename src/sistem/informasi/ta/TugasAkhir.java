@@ -28,11 +28,20 @@ public class TugasAkhir {
     }
     
     public boolean setPembimbing(Dosen d, int i){
-        if(i == 0 || i == 1){
-            this.pembimbing.set(i, d);
-            return true;
+        try
+        {
+            if(i == 0 || i == 1){
+                this.pembimbing.set(i, d);
+                return true;
+            }
+            return false;
         }
-        return false;
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+            return false;
+            
+        }
     }
     
     public Dosen getPembimbingByIndex(int i){
