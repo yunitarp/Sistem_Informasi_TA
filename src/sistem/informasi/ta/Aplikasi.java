@@ -64,7 +64,7 @@ public class Aplikasi {
     
     public void ViewMahasiswaBimbingan() {
         for (int i = 0; i < daftarMahasiswa.size(); i++) {
-            daftarMahasiswa.get(i).displayInfoMahasiswa();
+            daftarMahasiswa.get(i).toString();
         }
     } 
     
