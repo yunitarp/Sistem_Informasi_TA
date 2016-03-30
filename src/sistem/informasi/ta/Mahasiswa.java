@@ -13,13 +13,14 @@ public class Mahasiswa extends Orang /*implements Bimbingan*/{
     private TugasAkhir tugasAkhir;
     private String nim;
     private String status;
+    private String password;
     /**
      *
      * @param nim
      * @param status
      * @param nama
      */
-    public Mahasiswa(String nama, String nim,String status){
+    public Mahasiswa(String nama, String nim,String status, String password){
        super(nama);
        this.nim = nim;
        this.status = status;
@@ -44,10 +45,20 @@ public class Mahasiswa extends Orang /*implements Bimbingan*/{
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     
     public void displayInfoMahasiswa() {
         System.out.println("Nama Mahasiswa : " + getNama());
-        System.out.println("Nama Mahasiswa : " + getNim());
-        System.out.println("Nama Mahasiswa : " + getStatus());
+        System.out.println("NIM Mahasiswa : " + getNim());
+        System.out.println("Status Mahasiswa : " + getStatus());
+        System.out.println("Password Mahasiswa" + getPassword());
+        
     }
 }
