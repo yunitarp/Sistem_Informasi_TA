@@ -16,11 +16,11 @@ public class Dosen extends Orang {
     private String kodeDosen;
     private int nTopikTA;
     private int maxTopikTA;
-    
-    public Dosen(String nama, String status, String nip, String kodeDosen, int maxTopikTA ){
-        super(nama);
-        this.nip = nip;
+
+    public Dosen(String status, String nip, String kodeDosen, int maxTopikTA, String nama, int umur, String noTelp, String alamat, String tanggalLahir, String username, String password) {
+        super(nama, umur, noTelp, alamat, tanggalLahir, username, password);
         this.status = status;
+        this.nip = nip;
         this.kodeDosen = kodeDosen;
         this.nTopikTA = 0;
         this.maxTopikTA = maxTopikTA;

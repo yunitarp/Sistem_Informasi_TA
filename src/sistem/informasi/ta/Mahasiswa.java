@@ -10,20 +10,17 @@ package sistem.informasi.ta;
  * @author Aldry
  */
 public class Mahasiswa extends Orang /*implements Bimbingan*/{
-    private TugasAkhir tugasAkhir;
+    TugasAkhir tugasAkhir;
     private String nim;
     private String status;
-    /**
-     *
-     * @param nim
-     * @param status
-     * @param nama
-     */
-    public Mahasiswa(String nama, String nim,String status){
-       super(nama);
-       this.nim = nim;
-       this.status = status;
+
+    public Mahasiswa(String nim, String status, String nama, int umur, String noTelp, String alamat, String tanggalLahir, String username, String password) {
+        super(nama, umur, noTelp, alamat, tanggalLahir, username, password);
+        this.nim = nim;
+        this.status = status;
     }
+    
+    
     
     public void createTA (String judul) {
         this.tugasAkhir = new TugasAkhir(judul);
@@ -50,4 +47,13 @@ public class Mahasiswa extends Orang /*implements Bimbingan*/{
         System.out.println("Nama Mahasiswa : " + getNim());
         System.out.println("Nama Mahasiswa : " + getStatus());
     }
+
+    @Override
+    public String toString() {
+        return "Nama Mahasiswa :"+getNama()+"\n"
+                + "Nim Mahasiswa : "+getNim()+"\n"
+                + ""; 
+    }
+    
+    
 }
