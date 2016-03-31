@@ -41,14 +41,6 @@ public class Mahasiswa extends Orang /*implements Bimbingan*/{
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
     
     public void displayInfoMahasiswa() {
         System.out.println("Nama Mahasiswa : " + getNama());

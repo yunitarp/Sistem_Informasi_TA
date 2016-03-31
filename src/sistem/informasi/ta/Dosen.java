@@ -26,11 +26,6 @@ public class Dosen extends Orang {
         this.maxTopikTA = maxTopikTA;
         this.topikTA = new KelompokTA[maxTopikTA];
     }
-
-    Dosen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public String getStatus() {
         return status;
     }
