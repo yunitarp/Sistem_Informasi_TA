@@ -39,7 +39,11 @@ public class Aplikasi {
         }
     }
     
-    
+    public void ViewMahasiswaBimbingan() {
+        for (int i = 0; i < daftarMahasiswa.size(); i++) {
+            daftarMahasiswa.get(i).toString();
+        }
+    } 
     
     public Mahasiswa getMahasiswa(String nim){
         try{
