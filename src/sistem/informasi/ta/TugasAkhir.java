@@ -5,18 +5,23 @@
  */
 package sistem.informasi.ta;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author yunitarp2706
  */
-public class TugasAkhir {
+public class TugasAkhir implements Serializable {
     private ArrayList<Dosen> pembimbing = new ArrayList<>();
     private String judul;
 
     public TugasAkhir(String judul) {
         this.judul = judul;
+    }
+
+    public ArrayList<Dosen> getPembimbing() {
+        return pembimbing;
     }
 
     public String getJudul() {
@@ -28,20 +33,11 @@ public class TugasAkhir {
     }
     
     public boolean setPembimbing(Dosen d, int i){
-        try
-        {
-            if(i == 0 || i == 1){
+            if((i-1)== 0 || (i-1) == 1){
                 this.pembimbing.set(i, d);
                 return true;
             }
             return false;
-        }
-        catch (Exception ex)
-        {
-            System.out.println(ex.getMessage());
-            return false;
-            
-        }
     }
     
     public Dosen getPembimbingByIndex(int i){

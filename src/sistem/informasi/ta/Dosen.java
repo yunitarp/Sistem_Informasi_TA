@@ -5,27 +5,30 @@
  */
 package sistem.informasi.ta;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  *
  * @author yunitarp2706
  */
-public class Dosen extends Orang {
+public class Dosen extends Orang implements Serializable {
     private KelompokTA topikTA[];
     private String status;
     private String nip;
     private String kodeDosen;
     private int nTopikTA;
-    private int maxTopikTA;
+    private int maxTopikTA = 10;
 
-    public Dosen(String status, String nip, String kodeDosen, int maxTopikTA, String nama, int umur, String noTelp, String alamat, String tanggalLahir, String username, String password) {
-        super(nama, umur, noTelp, alamat, tanggalLahir, username, password);
+    public Dosen(String nama, String nip, String kodeDosen, String noTelp, String alamat, String tanggalLahir, String username, String password) {
+        super(nama, noTelp, alamat, tanggalLahir, username, password);
         this.status = status;
         this.nip = nip;
         this.kodeDosen = kodeDosen;
         this.nTopikTA = 0;
-        this.maxTopikTA = maxTopikTA;
         this.topikTA = new KelompokTA[maxTopikTA];
     }
+
     public String getStatus() {
         return status;
     }
@@ -84,6 +87,10 @@ public class Dosen extends Orang {
 
     public void setKodeDosen(String kodeDosen) {
         this.kodeDosen = kodeDosen;
+    }
+
+    public int getnTopikTA() {
+        return nTopikTA;
     }
     
 }

@@ -5,11 +5,13 @@
  */
 package sistem.informasi.ta;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Bety Elysabeth
  */
-public abstract class Orang {
+public abstract class Orang implements Serializable {
 
     private String nama;
     private int umur;
@@ -19,9 +21,8 @@ public abstract class Orang {
     private String username;
     private String password;
 
-    public Orang(String nama, int umur, String noTelp, String alamat, String tanggalLahir, String username, String password) {
+    public Orang(String nama, String noTelp, String alamat, String tanggalLahir, String username, String password) {
         this.nama = nama;
-        this.umur = umur;
         this.noTelp = noTelp;
         this.alamat = alamat;
         this.tanggalLahir = tanggalLahir;

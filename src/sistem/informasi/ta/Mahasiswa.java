@@ -5,23 +5,23 @@
  */
 package sistem.informasi.ta;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Aldry
  */
-public class Mahasiswa extends Orang /*implements Bimbingan*/{
-    TugasAkhir tugasAkhir;
+public class Mahasiswa extends Orang implements Serializable{
+    private TugasAkhir tugasAkhir;
     private String nim;
     private String status;
 
-    public Mahasiswa(String nim, String status, String nama, int umur, String noTelp, String alamat, String tanggalLahir, String username, String password) {
-        super(nama, umur, noTelp, alamat, tanggalLahir, username, password);
+    public Mahasiswa(String nama, String nim, String status, String noTelp, String alamat, String tanggalLahir, String username, String password) {
+        super(nama, noTelp, alamat, tanggalLahir, username, password);
         this.nim = nim;
         this.status = status;
     }
-    
-    
-    
+       
     public void createTA (String judul) {
         this.tugasAkhir = new TugasAkhir(judul);
     }
@@ -42,19 +42,18 @@ public class Mahasiswa extends Orang /*implements Bimbingan*/{
         this.status = status;
     }
     
-    public void displayInfoMahasiswa() {
-        System.out.println("Nama Mahasiswa : " + getNama());
-        System.out.println("NIM Mahasiswa : " + getNim());
-        System.out.println("Status Mahasiswa : " + getStatus());
-        System.out.println("Password Mahasiswa" + getPassword());
-        
-    }
-
     @Override
     public String toString() {
         return "Nama Mahasiswa :"+getNama()+"\n"
                 + "Nim Mahasiswa : "+getNim()+"\n"
-                + ""; 
+                + "Status Mahasiswa : "+getStatus()
+                + "Judul Tugas Akhir"+getTugasAkhir().getJudul()
+                + "Dosen Pembimbing"+getTugasAkhir().getPembimbingByIndex(0)
+                + "Dosen Pembimbing"+getTugasAkhir().getPembimbingByIndex(1);
+    }
+
+    public TugasAkhir getTugasAkhir() {
+        return tugasAkhir;
     }
     
     

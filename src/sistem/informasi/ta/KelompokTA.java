@@ -5,13 +5,14 @@
  */
 package sistem.informasi.ta;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Bety Elysabeth
  */
-public class KelompokTA {
+public class KelompokTA implements Serializable {
 	private String topik;
         private ArrayList<Mahasiswa> anggota = new ArrayList<>();
 	
@@ -28,7 +29,7 @@ public class KelompokTA {
 	}
 	
 	public void addAnggota(Mahasiswa m){
-            if(anggota.size()>4) return;
+            if(anggota.size()>=4) return;
             anggota.add(m);
         }
         
@@ -56,5 +57,10 @@ public class KelompokTA {
             }
             return false;
         }
+
+        public ArrayList<Mahasiswa> getAnggota() {
+            return anggota;
+        }
+        
 }
 
