@@ -277,13 +277,12 @@ public class Aplikasi{
                 case "1" : System.out.println("Masukkan Judul Tugas Akhir : ");
                           String judulTA = sc.next();
                           daftarMahasiswa.get(loggedin).createTA(judulTA);
-                          //System.out.println(daftarMahasiswa.get(loggedin).toString());
-                          //updateFileMahasiswa();
+                          updateFileMahasiswa();
                           break;
                 case "2" : System.out.println("Masukkan Judul TA baru : ");
                            String judulTABaru = sc.next();
                            daftarMahasiswa.get(loggedin).getTugasAkhir().setJudul(judulTABaru);
-                           //updateFileMahasiswa();
+                           updateFileMahasiswa();
                            break;
                 case "3" : System.out.println("Set pembimbing 1/2? :");
                            int n = sc.nextInt();
@@ -293,13 +292,10 @@ public class Aplikasi{
                             }
                            System.out.println("Masukkan pilihan : ");
                            int i = sc.nextInt();
-                           daftarMahasiswa.get(loggedin).getTugasAkhir().setPembimbing(daftarDosen.get(i-1), n-1);
-                           if(daftarMahasiswa.get(loggedin).getTugasAkhir().setPembimbing(daftarDosen.get(i-1), n-1)){
-                               System.out.println("Berhasil");
-                           } System.out.println("gagal");
+                           daftarMahasiswa.get(loggedin).getTugasAkhir().setPembimbing(daftarDosen.get(i-1), n);
                            System.out.println(daftarMahasiswa.get(loggedin).toString());
+                           updateFileMahasiswa();
                            break;
-                           //updateFileMahasiswa();
                 default : System.out.println("Menu yang anda masukkan salah");;
             }
         } while (!pilihan.equals("4"));
