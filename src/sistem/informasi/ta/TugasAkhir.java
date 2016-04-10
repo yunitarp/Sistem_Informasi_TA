@@ -17,6 +17,8 @@ public class TugasAkhir implements Serializable {
     private String judul;
 
     public TugasAkhir(String judul) {
+        pembimbing.add(null);
+        pembimbing.add(null);
         this.judul = judul;
     }
 
@@ -34,7 +36,7 @@ public class TugasAkhir implements Serializable {
     
     public boolean setPembimbing(Dosen d, int i){
             if((i-1)== 0 || (i-1) == 1){
-                this.pembimbing.set(i, d);
+                pembimbing.set(i-1, d);
                 return true;
             }
             return false;
