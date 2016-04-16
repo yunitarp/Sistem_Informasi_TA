@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistem.informasi.ta;
+package Models;
 
 import java.io.Serializable;
+
 
 /**
  *

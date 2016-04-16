@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistem.informasi.ta;
+package Models;
+
+import Controller.ControllerMainFrame;
 
 /**
  *
@@ -11,6 +13,7 @@ package sistem.informasi.ta;
  */
 public class Driver {
     public static void main(String[] args) {
+        Controller.ControllerMainFrame contr = new ControllerMainFrame();
         Aplikasi a= new Aplikasi();
         a.mainMenu();
     }
