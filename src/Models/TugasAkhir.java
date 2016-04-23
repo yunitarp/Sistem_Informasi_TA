@@ -21,6 +21,8 @@ public class TugasAkhir implements Serializable {
         pembimbing.add(null);
         this.judul = judul;
     }
+    
+    
 
     public ArrayList<Dosen> getPembimbing() {
         return pembimbing;

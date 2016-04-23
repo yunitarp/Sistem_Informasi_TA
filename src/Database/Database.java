@@ -20,7 +20,7 @@ public class Database {
 
     public void connect() {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/db_tubes", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistem_informasi_ta", "root", "");
             sta = conn.createStatement();
         } catch (Exception e) {
             e.printStackTrace();

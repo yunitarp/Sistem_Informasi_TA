@@ -13,9 +13,9 @@ import Controller.ControllerMainFrame;
  */
 public class Driver {
     public static void main(String[] args) {
-        Controller.ControllerMainFrame contr = new ControllerMainFrame();
-        Aplikasi a= new Aplikasi();
-        a.mainMenu();
+       Controller.ControllerMainFrame contr = new ControllerMainFrame();
+       Aplikasi a= new Aplikasi();
+       a.mainMenu();
     }
     
 }
