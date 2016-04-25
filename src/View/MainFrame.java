@@ -1096,7 +1096,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         HomeSetPembimbing.setText("Home");
 
-        jLabel44.setText("Masukkan Pilihan Kode Dosen");
+        jLabel44.setText("Masukkan Indeks Pembimbing");
 
         PilihDosenPembimbing.setText("Set Pembimbing");
 

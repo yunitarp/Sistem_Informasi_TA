@@ -1623,7 +1623,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel44">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Masukkan Pilihan Kode Dosen"/>
+                <Property name="text" type="java.lang.String" value="Masukkan Indeks Pembimbing"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="FieldKodeDosenSetPembimbing">

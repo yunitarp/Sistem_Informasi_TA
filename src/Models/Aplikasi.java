@@ -400,8 +400,8 @@ public class Aplikasi{
        return d;
    }
    
-   public boolean setPembimbing(int i){
-       daftarMahasiswa.get(loggedin).getTugasAkhir().setPembimbing(daftarDosen.get(i-1), i);
+   public boolean setPembimbing(int i, int n){
+       daftarMahasiswa.get(loggedin).getTugasAkhir().setPembimbing(daftarDosen.get(i-1), n);
        updateFileMahasiswa();
        return true;
    }

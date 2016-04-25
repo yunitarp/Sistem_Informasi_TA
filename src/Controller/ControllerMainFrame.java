@@ -394,7 +394,8 @@ public class ControllerMainFrame implements ActionListener{
         if(a.equals(main.getPilihDosenPembimbing()))
         {
             int i = Integer.parseInt(main.getFieldIndexPembimbingSetPembimbing().getText());
-            if(apps.setPembimbing(i)){
+            int n = Integer.parseInt(main.getFieldKodeDosenSetPembimbing().getText());
+            if(apps.setPembimbing(n,i)){
                 main.showMessage("Dosen Pembimbing berhasil di set");
             }else{
                 main.showMessage("Gagal menset dosen Pembimbing", "Error", JOptionPane.ERROR_MESSAGE);
@@ -425,6 +426,7 @@ public class ControllerMainFrame implements ActionListener{
            addViewKelompokTAToTable(main.getTabelViewTA(), apps.viewTA(main.getFieldSearchTopikViewTA().getText()));
        }
        if(a.equals(main.getButtonTambahTambahMahasiswaBimbingan())){
+           apps.updateFileDosen();
            if(apps.tambahMahasiswaBimbingan(main.getFieldTopikTATambahAnggota().getText(), main.getFieldNimMahasiswaTambahMahasiswaBimbingan().getText())){
                main.showMessage("Mahasiswa Berhasil Ditambahkan");
            }else{
@@ -443,6 +445,7 @@ public class ControllerMainFrame implements ActionListener{
        }
        if(a.equals(main.getCekViewKelompokTA())){
            apps.updateFileDosen();
+           apps.updateFileMahasiswa();
            KelompokTA ta = apps.viewMahasiswaBimbingan(main.getFieldTopikTAViewMahasiswaBimbingan().getText());
            if(ta != null){
                 addMahasiswaToTable(main.getTabelViewKelompokTA(),apps.getMahasiswaBimbingan(ta));
