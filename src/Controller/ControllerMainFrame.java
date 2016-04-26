@@ -94,7 +94,6 @@ public class ControllerMainFrame implements ActionListener{
         main.getUpdateRevisiJudulTA().addActionListener(this);
         main.getHomeSetPembimbing().addActionListener(this);
         main.getPilihDosenPembimbing().addActionListener(this);
-        main.getButtonTambahTambahMahasiswaBimbingan().addActionListener(this);
         main.getTambahMahasiswaBimbingan().addActionListener(this);
         main.getJudulTACreateTA().addActionListener(this);
         main.getFieldTopikTAViewMahasiswaBimbingan().addActionListener(this);
@@ -150,12 +149,12 @@ public class ControllerMainFrame implements ActionListener{
      public void addDosenPembimbingToTable(JTable table, ArrayList<Dosen> dosenPembimbing){
          String[] columnDosen = {"No", "Nama Dosen", "Kode Dosen"};
         DefaultTableModel tb = new DefaultTableModel(columnDosen, 0);
-        int no=0;
-        for (Dosen d : dosenPembimbing)
-        {
-            no+=1;
-            String[] data = {no+"", d.getNama(), d.getKodeDosen()};
-            tb.addRow(data);
+        Mahasiswa mhs = apps.getLoggedInMahasiswa();
+        for (int i = 0;i<dosenPembimbing.size(); i++) {
+            if(!mhs.getTugasAkhir().getPembimbing().contains(dosenPembimbing.get(i))){
+                String[] data = {(i+1)+"", dosenPembimbing.get(i).getNama(), dosenPembimbing.get(i).getKodeDosen()};
+                tb.addRow(data);
+            }
         }
         table.setModel(tb);
      }
@@ -176,10 +175,17 @@ public class ControllerMainFrame implements ActionListener{
             String d = apps.login(main.getUsenameLogIn().getText(), main.getPasswordLogIn().getText());
             if (d.equals("dosen")) {
                 apps.menuDosen();
-                show("MenuDosen");
+                Dosen dosen = apps.getLoggedInDosen();
+                main.getNamaDosen().setText(dosen.getNama());
+                main.getKodeDosen().setText(dosen.getKodeDosen());
+               show("MenuDosen");
             }
             else if (d.equals("mahasiswa")) {
                 apps.menuMahasiswa();
+                Mahasiswa mhs = apps.getLoggedInMahasiswa();
+                main.getNamaMhs().setText(mhs.getNama());
+                main.getNimMhs().setText(mhs.getNim());
+                //System.out.println(mhs.toString());
                 show("MenuMahasiswa");
             }
             else if (d.equals("salah")) {
@@ -425,7 +431,7 @@ public class ControllerMainFrame implements ActionListener{
        if(a.equals(main.getViewTAMenuDosen())){
            addViewKelompokTAToTable(main.getTabelViewTA(), apps.viewTA(main.getFieldSearchTopikViewTA().getText()));
        }
-       if(a.equals(main.getButtonTambahTambahMahasiswaBimbingan())){
+       if(a.equals(main.getAddTambahMahasiswa())){
            apps.updateFileDosen();
            if(apps.tambahMahasiswaBimbingan(main.getFieldTopikTATambahAnggota().getText(), main.getFieldNimMahasiswaTambahMahasiswaBimbingan().getText())){
                main.showMessage("Mahasiswa Berhasil Ditambahkan");

@@ -6,10 +6,13 @@
 package View;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -78,6 +81,8 @@ public class MainFrame extends javax.swing.JFrame {
         HapusMahasiswaBimbingan = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         LogoutDosen = new javax.swing.JButton();
+        namaDosen = new javax.swing.JLabel();
+        kodeDosen = new javax.swing.JLabel();
         HalamanCreateKelompokTA = new javax.swing.JPanel();
         HomeCreateKelompokTA = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
@@ -162,6 +167,8 @@ public class MainFrame extends javax.swing.JFrame {
         CreateTA = new javax.swing.JButton();
         RevisiJudulTA = new javax.swing.JButton();
         SetPembimbing = new javax.swing.JButton();
+        namaMhs = new javax.swing.JLabel();
+        nimMhs = new javax.swing.JLabel();
         HalamanCreateTA = new javax.swing.JPanel();
         HomeCreateTA = new javax.swing.JButton();
         jLabel40 = new javax.swing.JLabel();
@@ -367,35 +374,50 @@ public class MainFrame extends javax.swing.JFrame {
 
         LogoutDosen.setText("Logout");
 
+        namaDosen.setText("jLabel34");
+
+        kodeDosen.setText("jLabel34");
+
         javax.swing.GroupLayout MenuDosenLayout = new javax.swing.GroupLayout(MenuDosen);
         MenuDosen.setLayout(MenuDosenLayout);
         MenuDosenLayout.setHorizontalGroup(
             MenuDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuDosenLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(LogoutDosen)
-                .addGap(94, 94, 94))
             .addGroup(MenuDosenLayout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addGroup(MenuDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(34, 34, 34)
+                .addGroup(MenuDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MenuDosenLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(MenuDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel27)))
-                    .addComponent(TambahMahasiswaBimbingan, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                    .addComponent(CreateKelompokTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(HapusMahasiswaBimbingan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ViewMahasiswaBimbingan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ViewTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 244, Short.MAX_VALUE))
+                        .addComponent(kodeDosen)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(MenuDosenLayout.createSequentialGroup()
+                        .addComponent(namaDosen)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LogoutDosen)
+                        .addGap(94, 94, 94))
+                    .addGroup(MenuDosenLayout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addGroup(MenuDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(MenuDosenLayout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(MenuDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel27)))
+                            .addComponent(TambahMahasiswaBimbingan, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                            .addComponent(CreateKelompokTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HapusMahasiswaBimbingan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ViewMahasiswaBimbingan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ViewTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 244, Short.MAX_VALUE))))
         );
         MenuDosenLayout.setVerticalGroup(
             MenuDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuDosenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LogoutDosen)
-                .addGap(39, 39, 39)
+                .addGroup(MenuDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LogoutDosen)
+                    .addComponent(namaDosen))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(kodeDosen)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel27)
@@ -832,6 +854,11 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel31.setText("Masukkan Topik TA");
 
         ViewTAMenuDosen.setText("View");
+        ViewTAMenuDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewTAMenuDosenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout HalamanViewTALayout = new javax.swing.GroupLayout(HalamanViewTA);
         HalamanViewTA.setLayout(HalamanViewTALayout);
@@ -959,6 +986,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        namaMhs.setText("jLabel34");
+
+        nimMhs.setText("jLabel34");
+
         javax.swing.GroupLayout MenuMahasiswaLayout = new javax.swing.GroupLayout(MenuMahasiswa);
         MenuMahasiswa.setLayout(MenuMahasiswaLayout);
         MenuMahasiswaLayout.setHorizontalGroup(
@@ -968,7 +999,11 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(LogoutMahasiswa)
                 .addGap(101, 101, 101))
             .addGroup(MenuMahasiswaLayout.createSequentialGroup()
-                .addGap(256, 256, 256)
+                .addGap(68, 68, 68)
+                .addGroup(MenuMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(nimMhs)
+                    .addComponent(namaMhs))
+                .addGap(148, 148, 148)
                 .addGroup(MenuMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SetPembimbing)
                     .addComponent(jLabel38)
@@ -982,8 +1017,12 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(MenuMahasiswaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LogoutMahasiswa)
-                .addGap(58, 58, 58)
-                .addComponent(jLabel38)
+                .addGap(19, 19, 19)
+                .addComponent(namaMhs)
+                .addGap(25, 25, 25)
+                .addGroup(MenuMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel38)
+                    .addComponent(nimMhs))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel39)
                 .addGap(18, 18, 18)
@@ -1217,6 +1256,10 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AddTambahMahasiswaActionPerformed
 
+    private void ViewTAMenuDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewTAMenuDosenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ViewTAMenuDosenActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1365,6 +1408,14 @@ public class MainFrame extends javax.swing.JFrame {
         return InsertCreateTA;
     }
 
+    public JLabel getNamaMhs() {
+        return namaMhs;
+    }
+
+    public JLabel getNimMhs() {
+        return nimMhs;
+    }
+
     public JButton getHomeCreateTA() {
         return HomeCreateTA;
     }
@@ -1473,10 +1524,6 @@ public class MainFrame extends javax.swing.JFrame {
         return FieldNimMahasiswaTambahMahasiswaBimbingan;
     }
 
-    public JButton getButtonTambahTambahMahasiswaBimbingan() {
-        return AddTambahMahasiswa;
-    }
-
     public JTextField getJudulTACreateTA() {
         return JudulTACreateTA;
     }
@@ -1520,6 +1567,23 @@ public class MainFrame extends javax.swing.JFrame {
     public void setTableDosenPembimbing(JTable TableDosenPembimbing) {
         this.TableDosenPembimbing = TableDosenPembimbing;
     }
+
+    public JLabel getNamaDosen() {
+        return namaDosen;
+    }
+
+    public JLabel getKodeDosen() {
+        return kodeDosen;
+    }
+
+
+    
+    
+
+   
+
+    
+    
     
     
     
@@ -1682,5 +1746,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel kodeDosen;
+    private javax.swing.JLabel namaDosen;
+    private javax.swing.JLabel namaMhs;
+    private javax.swing.JLabel nimMhs;
     // End of variables declaration//GEN-END:variables
 }

@@ -47,10 +47,10 @@ public class Mahasiswa extends Orang implements Serializable{
     public String toString() {
         return "Nama Mahasiswa :"+getNama()+"\n"
                 + "Nim Mahasiswa : "+getNim()+"\n"
-                + "Status Mahasiswa : "+getStatus()
-                + "Judul Tugas Akhir"+getTugasAkhir().getJudul()
-                + "Dosen Pembimbing"+getTugasAkhir().getPembimbingByIndex(0)
-                + "Dosen Pembimbing"+getTugasAkhir().getPembimbingByIndex(1);
+                + "Status Mahasiswa : "+getStatus()+"\n"
+                + "Judul Tugas Akhir : "+getTugasAkhir().getJudul()+"\n";
+                //+ "Dosen Pembimbing : "+getTugasAkhir().getPembimbingByIndex(0).getNama()+"\n"
+                //+ "Dosen Pembimbing : "+getTugasAkhir().getPembimbingByIndex(1).getNama()+"\n";
     }
 
     public TugasAkhir getTugasAkhir() {

@@ -141,6 +141,13 @@ public class Aplikasi{
         return null;
     }
     
+    public Mahasiswa getLoggedInMahasiswa(){
+        return daftarMahasiswa.get(loggedin);
+    }
+    
+    public Dosen getLoggedInDosen(){
+        return daftarDosen.get(loggedin);
+    }
     public boolean deleteDosen(String kodeDosen){
         try{
              for(int i=0; i<daftarDosen.size(); i++){
@@ -269,6 +276,7 @@ public class Aplikasi{
            System.out.println("3. Set Pembimbing");
             System.out.println("4. Logout");
            System.out.println("Masukkan pilihan : ");
+           //System.out.println(daftarMahasiswa.get(loggedin).toString());
 //           pilihan = sc.next();
 //            switch (pilihan) {
 //                case "1" : System.out.println("Masukkan Judul Tugas Akhir : ");
@@ -362,8 +370,10 @@ public class Aplikasi{
         ArrayList<String> ta = new ArrayList<>();
         if(k1!=null){
             for (int i=0; i<daftarMahasiswa.size(); i++){
-                if(!k1.getAnggota().contains(daftarMahasiswa.get(i)))
+                if(k1.getAnggotaByNim(daftarMahasiswa.get(i).getNim()) != null){
+                    //System.out.println(daftarMahasiswa.get(i).getNama());
                     ta.add(daftarMahasiswa.get(i).getTugasAkhir().getJudul());
+                }
             }
         }
         return ta;
@@ -392,17 +402,13 @@ public class Aplikasi{
    
    public ArrayList<Dosen> viewDosenPembimbing(){
        updateFileDosen();
-       ArrayList<Dosen> d = new ArrayList<>();
-       for (int i = 0;i<daftarDosen.size(); i++) {
-            if(!daftarMahasiswa.get(loggedin).getTugasAkhir().getPembimbing().contains(daftarDosen.get(i)))
-                    d.add(daftarDosen.get(i));
-            }
-       return d;
+       return daftarDosen;
    }
    
    public boolean setPembimbing(int i, int n){
        daftarMahasiswa.get(loggedin).getTugasAkhir().setPembimbing(daftarDosen.get(i-1), n);
        updateFileMahasiswa();
+       updateFileDosen();
        return true;
    }
    
